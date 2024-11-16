@@ -98,6 +98,8 @@ class GeneticAlgorithm:
 
             self.logger.debug(f"Mutated population: {[str(chromosome) for chromosome in mutated_population]}")
 
+            self.population = mutated_population
+
 
             if iteration % 100 == 0:
                 best_fitness_value_in_iteration = self.find_best_fitness_value()
@@ -112,9 +114,9 @@ class GeneticAlgorithm:
 
 
 the_best_selection = BestSelection(percentage_the_best_to_select=0.5)
-arithmetic_crossover = ArithmeticCrossover(alpha=0.1, gene_range=(-500, 500))
-random_resetting = RandomResetting(mutation_rate=0.1, gene_range=(-500, 500))
+arithmetic_crossover = ArithmeticCrossover(alpha=0.5, gene_range=(-500, 500))
+random_resetting = RandomResetting(mutation_rate=0.01, gene_range=(-500, 500))
 
-ga = GeneticAlgorithm(num_parameters=2, gene_range=(-500, 500), population_size=100, num_iterations=50000,
+ga = GeneticAlgorithm(num_parameters=2, gene_range=(-500, 500), population_size=10, num_iterations=10000,
                       fitness_function=Szwefel(), selection_method=the_best_selection,crossover_method=arithmetic_crossover, mutation_method=random_resetting,  optimization_type= 'minimization')
 ga.run()
