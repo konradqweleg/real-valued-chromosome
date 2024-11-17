@@ -1,0 +1,203 @@
+2024-11-17 12:15:35,680 - app.genetic_algorithm.genetic_algorithm - INFO - Genetic algorithm initialized with population size: 10, optimization type: minimization, gene range: (-500.0, 500.0) , num iterations: 10000 , selection method: <app.selection.best_selection.BestSelection object at 0x000001661B4F56D0>, crossover method: <app.crossover.arithmetic_crossover.ArithmeticCrossover object at 0x000001661B4F4CD0>, mutation method: <app.mutation.random_resetting.RandomResetting object at 0x000001661B4F4E90>
+2024-11-17 12:15:35,681 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 371.72219851149544
+2024-11-17 12:15:35,681 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 0
+2024-11-17 12:15:35,698 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 456.67509079844626
+2024-11-17 12:15:35,700 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 100
+2024-11-17 12:15:35,716 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 385.2478499945926
+2024-11-17 12:15:35,716 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 200
+2024-11-17 12:15:35,733 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 227.76369574180478
+2024-11-17 12:15:35,733 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 300
+2024-11-17 12:15:35,750 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 227.76369637252424
+2024-11-17 12:15:35,750 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 400
+2024-11-17 12:15:35,767 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 227.76369637252424
+2024-11-17 12:15:35,767 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 500
+2024-11-17 12:15:35,784 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 227.76369637252424
+2024-11-17 12:15:35,784 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 600
+2024-11-17 12:15:35,801 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 217.14066307999565
+2024-11-17 12:15:35,801 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 700
+2024-11-17 12:15:35,818 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 217.1406630838461
+2024-11-17 12:15:35,818 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 800
+2024-11-17 12:15:35,834 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 217.1406630838461
+2024-11-17 12:15:35,834 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 900
+2024-11-17 12:15:35,851 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 170.81844649258596
+2024-11-17 12:15:35,851 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1000
+2024-11-17 12:15:35,868 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 217.1406630838461
+2024-11-17 12:15:35,868 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1100
+2024-11-17 12:15:35,885 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 73.12070222615557
+2024-11-17 12:15:35,886 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1200
+2024-11-17 12:15:35,902 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:35,902 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1300
+2024-11-17 12:15:35,918 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:35,918 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1400
+2024-11-17 12:15:35,935 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:35,936 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1500
+2024-11-17 12:15:35,951 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:35,952 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1600
+2024-11-17 12:15:35,968 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:35,968 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1700
+2024-11-17 12:15:35,985 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:35,985 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1800
+2024-11-17 12:15:36,001 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,001 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 1900
+2024-11-17 12:15:36,017 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,018 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2000
+2024-11-17 12:15:36,033 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,033 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2100
+2024-11-17 12:15:36,051 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,051 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2200
+2024-11-17 12:15:36,066 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,067 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2300
+2024-11-17 12:15:36,083 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,083 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2400
+2024-11-17 12:15:36,100 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,100 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2500
+2024-11-17 12:15:36,116 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,116 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2600
+2024-11-17 12:15:36,132 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,132 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2700
+2024-11-17 12:15:36,149 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,149 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2800
+2024-11-17 12:15:36,165 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,166 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 2900
+2024-11-17 12:15:36,182 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,182 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3000
+2024-11-17 12:15:36,199 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,199 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3100
+2024-11-17 12:15:36,215 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,215 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3200
+2024-11-17 12:15:36,232 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,232 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3300
+2024-11-17 12:15:36,247 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,247 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3400
+2024-11-17 12:15:36,264 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,264 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3500
+2024-11-17 12:15:36,281 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,281 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3600
+2024-11-17 12:15:36,297 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,297 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3700
+2024-11-17 12:15:36,313 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,313 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3800
+2024-11-17 12:15:36,330 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,330 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 3900
+2024-11-17 12:15:36,346 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,346 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4000
+2024-11-17 12:15:36,362 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,362 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4100
+2024-11-17 12:15:36,379 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,379 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4200
+2024-11-17 12:15:36,395 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,396 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4300
+2024-11-17 12:15:36,412 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,412 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4400
+2024-11-17 12:15:36,428 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,428 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4500
+2024-11-17 12:15:36,445 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,445 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4600
+2024-11-17 12:15:36,461 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,461 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4700
+2024-11-17 12:15:36,478 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,478 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4800
+2024-11-17 12:15:36,494 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,494 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 4900
+2024-11-17 12:15:36,510 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,510 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5000
+2024-11-17 12:15:36,527 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,527 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5100
+2024-11-17 12:15:36,543 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,543 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5200
+2024-11-17 12:15:36,560 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,560 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5300
+2024-11-17 12:15:36,576 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,576 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5400
+2024-11-17 12:15:36,593 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,593 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5500
+2024-11-17 12:15:36,609 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,609 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5600
+2024-11-17 12:15:36,626 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,626 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5700
+2024-11-17 12:15:36,641 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,641 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5800
+2024-11-17 12:15:36,658 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,658 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 5900
+2024-11-17 12:15:36,674 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,674 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6000
+2024-11-17 12:15:36,691 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,691 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6100
+2024-11-17 12:15:36,707 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,707 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6200
+2024-11-17 12:15:36,723 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,723 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6300
+2024-11-17 12:15:36,740 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,740 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6400
+2024-11-17 12:15:36,756 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,756 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6500
+2024-11-17 12:15:36,773 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,773 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6600
+2024-11-17 12:15:36,790 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,790 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6700
+2024-11-17 12:15:36,807 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,807 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6800
+2024-11-17 12:15:36,824 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,824 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 6900
+2024-11-17 12:15:36,840 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,840 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7000
+2024-11-17 12:15:36,857 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,857 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7100
+2024-11-17 12:15:36,874 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,874 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7200
+2024-11-17 12:15:36,890 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,890 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7300
+2024-11-17 12:15:36,906 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.4648340761796135
+2024-11-17 12:15:36,906 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7400
+2024-11-17 12:15:36,923 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 0.00019397978860524745
+2024-11-17 12:15:36,923 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7500
+2024-11-17 12:15:36,940 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:36,940 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7600
+2024-11-17 12:15:36,957 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:36,957 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7700
+2024-11-17 12:15:36,973 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:36,973 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7800
+2024-11-17 12:15:36,991 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:36,991 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 7900
+2024-11-17 12:15:37,008 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,008 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8000
+2024-11-17 12:15:37,025 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,025 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8100
+2024-11-17 12:15:37,042 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,042 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8200
+2024-11-17 12:15:37,059 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,059 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8300
+2024-11-17 12:15:37,076 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,076 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8400
+2024-11-17 12:15:37,093 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,093 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8500
+2024-11-17 12:15:37,110 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,110 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8600
+2024-11-17 12:15:37,127 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,127 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8700
+2024-11-17 12:15:37,143 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,143 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8800
+2024-11-17 12:15:37,160 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,161 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 8900
+2024-11-17 12:15:37,178 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,178 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9000
+2024-11-17 12:15:37,195 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,195 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9100
+2024-11-17 12:15:37,213 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,213 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9200
+2024-11-17 12:15:37,230 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,230 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9300
+2024-11-17 12:15:37,247 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,247 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9400
+2024-11-17 12:15:37,265 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,265 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9500
+2024-11-17 12:15:37,282 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,282 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9600
+2024-11-17 12:15:37,299 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,299 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9700
+2024-11-17 12:15:37,315 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,316 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9800
+2024-11-17 12:15:37,332 - app.genetic_algorithm.genetic_algorithm - INFO - Best fitness value in iteration: 2.5523112753944588e-05
+2024-11-17 12:15:37,332 - app.genetic_algorithm.genetic_algorithm - INFO - Number of iteration: 9900
+2024-11-17 12:15:37,349 - app.genetic_algorithm.genetic_algorithm - INFO - Best chromosome: Chromosome: [420.9688135974899, 420.9680154557411]
+2024-11-17 12:15:37,349 - app.genetic_algorithm.genetic_algorithm - INFO - Fitness value of the best chromosome: 2.5523112753944588e-05

@@ -1,10 +1,8 @@
 import logging
 
-from app.crossover.arithmetic_crossover import ArithmeticCrossover
-from app.function.szwefel import Szwefel
-from app.mutation.random_resetting import RandomResetting
+import numpy as np
 from app.real_value_chromosome import RealValuedChromosome
-from app.selection.best_selection import BestSelection
+import matplotlib.pyplot as plt
 
 
 def setup_logger(log_level=logging.INFO):
@@ -54,6 +52,10 @@ class GeneticAlgorithm:
 
         self.mutation_method = mutation_method
 
+        self.avg_fitness_values = []
+        self.std_fitness_values = []
+        self.min_fitness_values = []
+
         self.logger.info(f"Genetic algorithm initialized with population size: {population_size}, "
                          f"optimization type: {optimization_type}, gene range: {gene_range} , num iterations: {num_iterations} , selection method: {selection_method}, crossover method: {crossover_method}, mutation method: {mutation_method}")
 
@@ -78,6 +80,12 @@ class GeneticAlgorithm:
     def run(self):
         for iteration in range(self.num_iterations):
             fitness_values = [self.fitness_function.calculate(chromosome.genes) for chromosome in self.population]
+
+            avg_fitness = np.mean(fitness_values)
+            std_fitness = np.std(fitness_values)
+            self.avg_fitness_values.append(avg_fitness)
+            self.std_fitness_values.append(std_fitness)
+            self.min_fitness_values.append(min(fitness_values))
 
             index_offset_caused_by_numeration_from_zero = 1
             self.logger.debug(
@@ -104,6 +112,7 @@ class GeneticAlgorithm:
             if iteration % 100 == 0:
                 best_fitness_value_in_iteration = self.find_best_fitness_value()
                 self.logger.info(f"Best fitness value in iteration: {best_fitness_value_in_iteration}")
+                self.logger.info(f"Number of iteration: {iteration}")
 
 
 
@@ -112,11 +121,16 @@ class GeneticAlgorithm:
         self.logger.info(f"Best chromosome: {best_chromosome}")
         self.logger.info(f"Fitness value of the best chromosome: {fitness_value_of_best_chromosome}")
 
+        return best_chromosome, fitness_value_of_best_chromosome, self.avg_fitness_values, self.std_fitness_values, self.min_fitness_values
 
-the_best_selection = BestSelection(percentage_the_best_to_select=0.5)
-arithmetic_crossover = ArithmeticCrossover(alpha=0.5, gene_range=(-500, 500))
-random_resetting = RandomResetting(mutation_rate=0.01, gene_range=(-500, 500))
 
-ga = GeneticAlgorithm(num_parameters=2, gene_range=(-500, 500), population_size=10, num_iterations=10000,
-                      fitness_function=Szwefel(), selection_method=the_best_selection,crossover_method=arithmetic_crossover, mutation_method=random_resetting,  optimization_type= 'minimization')
-ga.run()
+
+
+
+# the_best_selection = BestSelection(percentage_the_best_to_select=0.5)
+# arithmetic_crossover = ArithmeticCrossover(alpha=0.5, gene_range=(-500, 500))
+# random_resetting = RandomResetting(mutation_rate=0.01, gene_range=(-500, 500))
+#
+# ga = GeneticAlgorithm(num_parameters=2, gene_range=(-500, 500), population_size=10, num_iterations=10000,
+#                       fitness_function=Szwefel(), selection_method=the_best_selection,crossover_method=arithmetic_crossover, mutation_method=random_resetting,  optimization_type= 'minimization')
+# ga.run()
