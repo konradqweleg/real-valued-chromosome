@@ -3,8 +3,8 @@ import random
 from app.selection.selection_method import SelectionMethod
 
 class RouletteWheelSelection(SelectionMethod):
-    def __init__(self, percentage_chromosomes_to_select):
-        self.percentage_chromosomes_to_select = percentage_chromosomes_to_select
+    def __init__(self, percentage_the_best_to_select):
+        self.percentage_chromosomes_to_select = percentage_the_best_to_select
         self.logger = logging.getLogger(__name__)
 
     def select(self, population, fitness_scores, optimization_type='maximization'):

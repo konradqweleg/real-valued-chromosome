@@ -7,6 +7,8 @@ from tkinter import ttk
 
 import numpy as np
 from app.function.cec_2014_f1 import Cec2014F1
+from app.mutation.gaussian_mutation import GaussianMutation
+from app.mutation.uniform_mutation import UniformMutation
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
@@ -55,60 +57,80 @@ class GeneticAlgorithmApp:
         self.population_size = tk.IntVar(value=10)
         ttk.Entry(config_frame, textvariable=self.population_size).grid(row=2, column=1, padx=10, pady=5)
 
-        ttk.Label(config_frame, text="Number of Iterations:").grid(row=3, column=0, padx=10, pady=5)
-        self.num_iterations = tk.IntVar(value=10000)
-        ttk.Entry(config_frame, textvariable=self.num_iterations).grid(row=3, column=1, padx=10, pady=5)
+        ttk.Label(config_frame, text="Epochs:").grid(row=3, column=0, padx=10, pady=5)
+        self.epochs = tk.IntVar(value=10000)
+        ttk.Entry(config_frame, textvariable=self.epochs).grid(row=3, column=1, padx=10, pady=5)
 
-        ttk.Label(config_frame, text="Mutation Rate:").grid(row=4, column=0, padx=10, pady=5)
-        self.mutation_rate = tk.DoubleVar(value=0.01)
-        ttk.Entry(config_frame, textvariable=self.mutation_rate).grid(row=4, column=1, padx=10, pady=5)
+        ttk.Label(config_frame, text="Mutation Method:").grid(row=4, column=0, padx=10, pady=5)
+        self.mutation_method = ttk.Combobox(config_frame,
+                                            values=["RandomResetting", "UniformMutation", "GaussianMutation"])
+        self.mutation_method.grid(row=4, column=1, padx=10, pady=5)
+        self.mutation_method.current(0)
 
-        ttk.Label(config_frame, text="Selection Method:").grid(row=5, column=0, padx=10, pady=5)
+        ttk.Label(config_frame, text="Mutation Probability:").grid(row=4, column=2, padx=10, pady=5)
+        self.mutation_probability = tk.DoubleVar(value=0.01)
+        ttk.Entry(config_frame, textvariable=self.mutation_probability).grid(row=4, column=3, padx=10, pady=5)
+
+        ttk.Label(config_frame, text="Selection Method:").grid(row=6, column=0, padx=10, pady=5)
         self.selection_method = ttk.Combobox(config_frame,
                                              values=["BestSelection", "TournamentSelection", "RouletteWheelSelection"])
-        self.selection_method.grid(row=5, column=1, padx=10, pady=5)
+        self.selection_method.grid(row=6, column=1, padx=10, pady=5)
         self.selection_method.current(0)
 
-        ttk.Label(config_frame, text="Percentage of Best to Select:").grid(row=5, column=2, padx=10, pady=5)
+        ttk.Label(config_frame, text="Percentage of Best to Select:").grid(row=6, column=2, padx=10, pady=5)
         self.percentage_best_to_select = tk.DoubleVar(value=0.5)
-        ttk.Entry(config_frame, textvariable=self.percentage_best_to_select).grid(row=5, column=3, padx=10, pady=5)
+        ttk.Entry(config_frame, textvariable=self.percentage_best_to_select).grid(row=6, column=3, padx=10, pady=5)
 
-        ttk.Label(config_frame, text="Tournament Size (TournamentSelection):").grid(row=5, column=4, padx=10, pady=5)
+        ttk.Label(config_frame, text="Tournament Size (TournamentSelection):").grid(row=6, column=4, padx=10, pady=5)
         self.tournament_size = tk.IntVar(value=3)
-        ttk.Entry(config_frame, textvariable=self.tournament_size).grid(row=5, column=5, padx=10, pady=5)
+        ttk.Entry(config_frame, textvariable=self.tournament_size).grid(row=6, column=5, padx=10, pady=5)
+
+
 
         ttk.Label(config_frame, text="Crossover Method:").grid(row=7, column=0, padx=10, pady=5)
         self.crossover_method = ttk.Combobox(config_frame,
                                              values=["ArithmeticCrossover", "LinearCrossover", "AlphaMixingCrossover",
-                                                     "AlphaBetaMixingCrossover", "AveragingCrossover"])  # Add AveragingCrossover
+                                                     "AlphaBetaMixingCrossover", "AveragingCrossover"])
         self.crossover_method.grid(row=7, column=1, padx=10, pady=5)
         self.crossover_method.current(0)
 
-        ttk.Label(config_frame, text="Alpha Value (Arithmetic/AlphaMixing crossover):").grid(row=7, column=2, padx=10,
-                                                                                             pady=5)
+        ttk.Label(config_frame, text="Crossover Probability:").grid(row=7, column=2, padx=10, pady=5)
+        self.crossover_probability = tk.DoubleVar(value=0.5)
+        ttk.Entry(config_frame, textvariable=self.crossover_probability).grid(row=7, column=3, padx=10, pady=5)
+
+        ttk.Label(config_frame, text="Alpha Value (Arithmetic/AlphaMixing/AlphaBetaMixing):").grid(row=7, column=4, padx=10, pady=5)
         self.alpha_value = tk.DoubleVar(value=0.5)
-        ttk.Entry(config_frame, textvariable=self.alpha_value).grid(row=7, column=3, padx=10, pady=5)
+        ttk.Entry(config_frame, textvariable=self.alpha_value).grid(row=7, column=5, padx=10, pady=5)
 
-        ttk.Label(config_frame, text="Beta Value (AlphaBetaMixing crossover):").grid(row=7, column=4, padx=10, pady=5)
+        ttk.Label(config_frame, text="Beta Value (AlphaBetaMixing):").grid(row=8, column=4, padx=10, pady=5)
         self.beta_value = tk.DoubleVar(value=0.5)
-        ttk.Entry(config_frame, textvariable=self.beta_value).grid(row=7, column=5, padx=10, pady=5)
+        ttk.Entry(config_frame, textvariable=self.beta_value).grid(row=8, column=5, padx=10, pady=5)
 
-        ttk.Label(config_frame, text="Mutation Method:").grid(row=8, column=0, padx=10, pady=5)
-        self.mutation_method = ttk.Combobox(config_frame, values=["RandomResetting"])
-        self.mutation_method.grid(row=8, column=1, padx=10, pady=5)
-        self.mutation_method.current(0)
+        ttk.Label(config_frame, text="Gaussian Mean (Gaussian):").grid(row=8, column=0, padx=10, pady=5)
+        self.gaussian_mean = tk.DoubleVar(value=0)
+        ttk.Entry(config_frame, textvariable=self.gaussian_mean).grid(row=8, column=1, padx=10, pady=5)
 
-        ttk.Label(config_frame, text="Fitness Function:").grid(row=9, column=0, padx=10, pady=5)
+        ttk.Label(config_frame, text="Gaussian Stddev (Gaussian):").grid(row=8, column=2, padx=10, pady=5)
+        self.gaussian_stddev = tk.DoubleVar(value=1)
+        ttk.Entry(config_frame, textvariable=self.gaussian_stddev).grid(row=8, column=3, padx=10, pady=5)
+
+
+
+        ttk.Label(config_frame, text="Percentage of Best to Transfer (Elitism):").grid(row=9, column=0, padx=10, pady=5)
+        self.percentage_best_to_transfer = tk.DoubleVar(value=0.1)
+        ttk.Entry(config_frame, textvariable=self.percentage_best_to_transfer).grid(row=9, column=1, padx=10, pady=5)
+
+        ttk.Label(config_frame, text="Fitness Function:").grid(row=10, column=0, padx=10, pady=5)
         self.fitness_function = ttk.Combobox(config_frame, values=["Schwefel", "CECF1"])
-        self.fitness_function.grid(row=9, column=1, padx=10, pady=5)
+        self.fitness_function.grid(row=10, column=1, padx=10, pady=5)
         self.fitness_function.current(0)
 
-        ttk.Label(config_frame, text="Optimization Type:").grid(row=10, column=0, padx=10, pady=5)
+        ttk.Label(config_frame, text="Optimization Type:").grid(row=11, column=0, padx=10, pady=5)
         self.optimization_type = ttk.Combobox(config_frame, values=["minimization", "maximization"])
-        self.optimization_type.grid(row=10, column=1, padx=10, pady=5)
+        self.optimization_type.grid(row=11, column=1, padx=10, pady=5)
         self.optimization_type.current(0)
 
-        ttk.Button(config_frame, text="Run Genetic Algorithm", command=self.run_genetic_algorithm).grid(row=11,
+        ttk.Button(config_frame, text="Run Genetic Algorithm", command=self.run_genetic_algorithm).grid(row=12,
                                                                                                         column=0,
                                                                                                         columnspan=3,
                                                                                                         padx=10,
@@ -132,10 +154,12 @@ class GeneticAlgorithmApp:
         self.run_count += 1
         start_time = time.time()
         num_parameters = self.num_parameters.get()
+
         gene_range = (self.gene_range_min.get(), self.gene_range_max.get())
         population_size = self.population_size.get()
-        num_iterations = self.num_iterations.get()
-        mutation_rate = self.mutation_rate.get()
+        num_iterations = self.epochs.get()
+        mutation_rate = self.mutation_probability.get()
+        crossover_probability = self.crossover_probability.get()
 
         selection_method_name = self.selection_method.get()
         percentage_best_to_select = self.percentage_best_to_select.get()
@@ -143,14 +167,14 @@ class GeneticAlgorithmApp:
             selection_method = BestSelection(percentage_the_best_to_select=percentage_best_to_select)
         elif selection_method_name == "TournamentSelection":
             tournament_size = self.tournament_size.get()
-            selection_method = TournamentSelection(percentage_the_best_to_select=percentage_best_to_select, tournament_size=tournament_size)
+            selection_method = TournamentSelection(tournament_size=tournament_size, percentage_the_best_to_select=percentage_best_to_select)
         else:
-            selection_method = RouletteWheelSelection(percentage_chromosomes_to_select=percentage_best_to_select)
+            selection_method = RouletteWheelSelection(percentage_the_best_to_select=percentage_best_to_select)
 
         crossover_method_name = self.crossover_method.get()
         if crossover_method_name == "ArithmeticCrossover":
             alpha_value = self.alpha_value.get()
-            crossover_method = ArithmeticCrossover(alpha=alpha_value, gene_range=gene_range)
+            crossover_method = ArithmeticCrossover(gene_range=gene_range,alpha=alpha_value)
         elif crossover_method_name == "AlphaMixingCrossover":
             alpha_value = self.alpha_value.get()
             crossover_method = AlphaMixingCrossover(gene_range=gene_range, alpha=alpha_value)
@@ -158,12 +182,23 @@ class GeneticAlgorithmApp:
             alpha_value = self.alpha_value.get()
             beta_value = self.beta_value.get()
             crossover_method = AlphaBetaMixingCrossover(gene_range=gene_range, alpha=alpha_value, beta=beta_value)
-        elif crossover_method_name == "AveragingCrossover":  # Add AveragingCrossover
+        elif crossover_method_name == "AveragingCrossover":
             crossover_method = AveragingCrossover(gene_range=gene_range)
         else:
             crossover_method = LinearCrossover(gene_range=gene_range)
 
-        mutation_method = RandomResetting(mutation_rate=mutation_rate, gene_range=gene_range)
+        mutation_method_name = self.mutation_method.get()
+        if mutation_method_name == "RandomResetting":
+            mutation_method = RandomResetting(mutation_rate=mutation_rate, gene_range=gene_range)
+        elif mutation_method_name == "UniformMutation":
+            mutation_method = UniformMutation(mutation_rate=mutation_rate, gene_range=gene_range)
+        elif mutation_method_name == "GaussianMutation":
+            mean = self.gaussian_mean.get()
+            stddev = self.gaussian_stddev.get()
+            mutation_method = GaussianMutation(mutation_rate=mutation_rate, gene_range=gene_range, mean=mean,
+                                               stddev=stddev)
+        else:
+            raise ValueError(f"Unknown mutation method: {mutation_method_name}")
 
         fitness_function_name = self.fitness_function.get()
         if fitness_function_name == "Schwefel":
@@ -172,9 +207,16 @@ class GeneticAlgorithmApp:
             fitness_function = Cec2014F1()
 
         optimization_type = self.optimization_type.get()
+        percentage_best_to_transfer = self.percentage_best_to_transfer.get()
 
-        ga = GeneticAlgorithm(num_parameters=num_parameters, gene_range=gene_range, population_size=population_size, num_iterations=num_iterations,
-                              fitness_function=fitness_function, selection_method=selection_method, crossover_method=crossover_method, mutation_method=mutation_method, optimization_type=optimization_type)
+
+
+        ga = GeneticAlgorithm(num_parameters=num_parameters, gene_range=gene_range, population_size=population_size,
+                              num_iterations=num_iterations,
+                              fitness_function=fitness_function, selection_method=selection_method,
+                              crossover_method=crossover_method, mutation_method=mutation_method,
+                              optimization_type=optimization_type,
+                            percentage_best_to_transfer=percentage_best_to_transfer, crossover_probability=crossover_probability)
         best_chromosome, fitness_value_of_best_chromosome, avg_fitness_values, std_fitness_values, min_fitness_values = ga.run()
 
         rounded_best_chromosome = [round(gene, 3) for gene in best_chromosome.genes]
@@ -188,7 +230,8 @@ class GeneticAlgorithmApp:
         self.run_number_label.config(text=f"Run Number: {self.run_count}")
         self.computation_time_label.config(text=f"Computation Time: {computation_time:.2f} seconds")
 
-        self.save_results(avg_fitness_values, std_fitness_values, min_fitness_values, rounded_best_chromosome, rounded_best_fitness_value, computation_time)
+        self.save_results(avg_fitness_values, std_fitness_values, min_fitness_values, rounded_best_chromosome,
+                          rounded_best_fitness_value, computation_time)
 
     def plot_fitness(self, avg_fitness_values, std_fitness_values, min_fitness_values):
         for widget in self.plot_frame.winfo_children():
@@ -286,12 +329,15 @@ class GeneticAlgorithmApp:
             file.write(f"Number of Parameters: {self.num_parameters.get()}\n")
             file.write(f"Gene Range: ({self.gene_range_min.get()}, {self.gene_range_max.get()})\n")
             file.write(f"Population Size: {self.population_size.get()}\n")
-            file.write(f"Number of Iterations: {self.num_iterations.get()}\n")
-            file.write(f"Mutation Rate: {self.mutation_rate.get()}\n")
+            file.write(f"Epochs: {self.epochs.get()}\n")
+            file.write(f"Mutation Probability: {self.mutation_probability.get()}\n")
             file.write(f"Fitness Function: {self.fitness_function.get()}\n")
             file.write(f"Optimization Type: {self.optimization_type.get()}\n")
             file.write(f"Selection Method: {self.selection_method.get()}\n")
             file.write(f"Percentage of Best to Select: {self.percentage_best_to_select.get()}\n")
+            file.write(f"Eitism Percentage: {self.percentage_best_to_transfer.get()}\n")
+            file.write(f"Crossover Probability: {self.crossover_probability.get()}\n")
+
 
             if self.selection_method.get() == "TournamentSelection":
                 file.write(f"Tournament Size: {self.tournament_size.get()}\n")
@@ -304,6 +350,12 @@ class GeneticAlgorithmApp:
                 file.write(f"Beta Value: {self.beta_value.get()}\n")
 
             file.write(f"Crossover Method: {self.crossover_method.get()}\n")
+            file.write(f"Mutation Method: {self.mutation_method.get()}\n")
+
+            if self.mutation_method.get() == "GaussianMutation":
+                file.write(f"Gaussian Mean: {self.gaussian_mean.get()}\n")
+                file.write(f"Gaussian Stddev: {self.gaussian_stddev.get()}\n")
+
             file.write(f"Best Chromosome: {best_chromosome}\n")
             file.write(f"Best Fitness Value: {best_fitness_value}\n")
             file.write(f"Computation Time: {computation_time} seconds\n")
@@ -417,8 +469,8 @@ if __name__ == "__main__":
             file.write(f"Number of Parameters: {self.num_parameters.get()}\n")
             file.write(f"Gene Range: ({self.gene_range_min.get()}, {self.gene_range_max.get()})\n")
             file.write(f"Population Size: {self.population_size.get()}\n")
-            file.write(f"Number of Iterations: {self.num_iterations.get()}\n")
-            file.write(f"Mutation Rate: {self.mutation_rate.get()}\n")
+            file.write(f"Epochs: {self.epochs.get()}\n")
+            file.write(f"Mutation Rate: {self.mutation_probability.get()}\n")
             file.write(f"Fitness Function: {self.fitness_function.get()}\n")
             file.write(f"Optimization Type: {self.optimization_type.get()}\n")
             file.write(f"Selection Method: {self.selection_method.get()}\n")

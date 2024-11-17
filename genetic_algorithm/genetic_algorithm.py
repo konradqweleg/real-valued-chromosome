@@ -38,26 +38,29 @@ set_log_level(logging.INFO) #DEBUG OR INFO
 
 class GeneticAlgorithm:
     def __init__(self, num_parameters, gene_range, population_size, num_iterations, fitness_function, selection_method, crossover_method, mutation_method,
-                 optimization_type='minimization'):
+                 optimization_type='minimization', percentage_best_to_transfer = 0.2, crossover_probability = 0.5):
         self.logger = logging.getLogger(__name__)
 
         self.population = [RealValuedChromosome(num_parameters, gene_range=gene_range) for _ in range(population_size)]
         self.fitness_function = fitness_function
         self.optimization_type = optimization_type
         self.num_iterations = num_iterations
+        self.population_size = population_size
 
         self.selection_method = selection_method
 
         self.crossover_method = crossover_method
 
         self.mutation_method = mutation_method
+        self.crossover_probability = crossover_probability
 
         self.avg_fitness_values = []
         self.std_fitness_values = []
         self.min_fitness_values = []
 
-        self.logger.info(f"Genetic algorithm initialized with population size: {population_size}, "
-                         f"optimization type: {optimization_type}, gene range: {gene_range} , num iterations: {num_iterations} , selection method: {selection_method}, crossover method: {crossover_method}, mutation method: {mutation_method}")
+        self.percentage_best_to_transfer = percentage_best_to_transfer
+
+        self.logger.info(f"Genetic algorithm initialized with population size: {population_size}, number of parameters: {num_parameters}, optimization type: {optimization_type}, gene range: {gene_range}, num iterations: {num_iterations}, selection method: {selection_method}, crossover method: {crossover_method}, mutation method: {mutation_method}, crossover probability: {crossover_probability}")
 
     def __str__(self):
         return f"Population: {[str(chromosome) for chromosome in self.population]}"
@@ -87,6 +90,10 @@ class GeneticAlgorithm:
             self.std_fitness_values.append(std_fitness)
             self.min_fitness_values.append(min(fitness_values))
 
+            num_best_to_transfer = int(self.population_size * self.percentage_best_to_transfer)
+            best_individuals = sorted(self.population, key=lambda x: self.fitness_function.calculate(x.genes),
+                                      reverse=(self.optimization_type == "maximization"))[:num_best_to_transfer]
+
             index_offset_caused_by_numeration_from_zero = 1
             self.logger.debug(
                 f"Iteration {iteration + index_offset_caused_by_numeration_from_zero}: Fitness values: {fitness_values}")
@@ -98,7 +105,9 @@ class GeneticAlgorithm:
 
             self.logger.debug(f"Selected population: {[str(chromosome) for chromosome in selected_population]}")
 
-            crossover_population = self.crossover_method.crossover(selected_population, len(self.population))
+            expected_population_size = self.population_size - len(best_individuals)
+
+            crossover_population = self.crossover_method.crossover(selected_population, expected_population_size, self.crossover_probability)
 
             self.logger.debug(f"Crossover population: {[str(chromosome) for chromosome in crossover_population]}")
 
@@ -107,6 +116,8 @@ class GeneticAlgorithm:
             self.logger.debug(f"Mutated population: {[str(chromosome) for chromosome in mutated_population]}")
 
             self.population = mutated_population
+
+            self.population = mutated_population + best_individuals
 
 
             if iteration % 100 == 0:
