@@ -1,0 +1,8 @@
+Number of Parameters: 2
+Gene Range: (-500.0, 500.0)
+Population Size: 10
+Number of Iterations: 10000
+Mutation Rate: 0.01
+Best Chromosome: [419.36, 420.969]
+Best Fitness Value: 0.326
+Computation Time: 1.7036731243133545 seconds

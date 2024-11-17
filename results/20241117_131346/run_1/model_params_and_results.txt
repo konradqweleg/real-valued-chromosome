@@ -1,0 +1,14 @@
+Number of Parameters: 2
+Gene Range: (-500.0, 500.0)
+Population Size: 10
+Number of Iterations: 10000
+Mutation Rate: 0.01
+Fitness Function: Schwefel
+Optimization Type: minimization
+Selection Method: BestSelection
+Percentage of Best to Select: 0.5
+Alpha Value: 0.5
+Crossover Method: ArithmeticCrossover
+Best Chromosome: [420.874, 420.939]
+Best Fitness Value: 0.001
+Computation Time: 1.6550803184509277 seconds

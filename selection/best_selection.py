@@ -9,7 +9,7 @@ class BestSelection(SelectionMethod):
         self.logger = logging.getLogger(__name__)
 
     def select(self, population, fitness_scores, optimization_type='minimization'):
-        self.logger.debug(f"Selecting the best chromosomes from the population, percentage the ebst to select: {self.percentage_the_best_to_select}")
+        self.logger.debug(f"Selecting the best chromosomes from the population, percentage the best to select: {self.percentage_the_best_to_select}")
 
         if optimization_type == 'minimization':
             selected_indices = sorted(range(len(fitness_scores)), key=lambda i: fitness_scores[i])
